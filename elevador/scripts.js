@@ -20,35 +20,39 @@ function IrAté(andar) {
         } else {
             sentido = "baixo"
         }
-    } 
+    }
     console.log("Sentido: " + sentido)
-    
+
     // Em loop infinito
     FecharPorta();
 
     const porta = document.getElementById("porta");
     porta.addEventListener("animationend", () => {
 
-    while (andarAtual != andarEscolhido) {
-        syncWait(2000)
-        if (sentido == "cima") {
-            andarAtual++;
-            console.log("Subindooooo")
-        }
-        else {
-            andarAtual--;
-            console.log("Descendoooo")
-        }
-        console.log("Andar atual: " + andarAtual)
-        
-    } 
-    
-    console.log("Cheguei!");
+        while (andarAtual != andarEscolhido) {
+            syncWait(2000)
+            if (sentido == "cima") {
+                andarAtual++;
+                console.log("Subindooooo")
+            }
+            else {
+                andarAtual--;
+                console.log("Descendoooo")
+            }
+            console.log("Andar atual: " + andarAtual)
 
-    AbrirPorta();
-     
-    }); 
-} 
+        }
+
+        AbrirPorta();
+
+        console.log("Cheguei!");
+
+        //Recarrega página
+        syncWait(2000)
+        document.location.reload(true);
+
+    });
+}
 
 function AbrirPorta() {
     document.getElementById("porta").classList.remove("portaFechando")
