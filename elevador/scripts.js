@@ -13,6 +13,7 @@ function IrAté(andar) {
     //console.log("Andar atual: " + andarAtual)
 
     if (andarEscolhido == andarAtual) {
+        document.getElementById("painel").innerText = andarEscolhido;
         return "ja to nele"
     } else {
         if (andarEscolhido > andarAtual) {
@@ -33,12 +34,15 @@ function IrAté(andar) {
             syncWait(2000)
             if (sentido == "cima") {
                 andarAtual++;
+                //document.getElementById("painel").innerText = "↑ " + andarAtual;
                 console.log("Subindooooo")
             }
             else {
                 andarAtual--;
+                //document.getElementById("painel").innerText = "↓ " + andarAtual;
                 console.log("Descendoooo")
             }
+
             console.log("Andar atual: " + andarAtual)
 
         }
@@ -48,7 +52,7 @@ function IrAté(andar) {
         console.log("Cheguei!");
 
         //Recarrega página
-        syncWait(2000)
+        syncWait(10000)
         document.location.reload(true);
 
     });
