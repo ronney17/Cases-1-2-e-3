@@ -1,0 +1,43 @@
+body{
+    background-image: url(Assets/porta-aberta.png);
+    background-repeat: no-repeat;
+    background-size:70%;
+}
+
+.parede {
+    position: absolute;
+    width: 345px;
+    height: 633.3px;
+    z-index: 2;
+    margin-top: -8.5px;
+}
+
+.porta{
+    z-index: 1;
+}
+
+.portaAbrindo{
+    position: relative;
+    height: 410px;
+    animation-name: portaAbrindo;
+    animation-fill-mode: forwards;
+    animation-duration: 2.5s;
+}
+
+.portaFechando{
+    position: relative;
+    height: 410px;
+    animation-name: portaFechando;
+    animation-fill-mode: forwards;
+    animation-duration: 2.5s;
+}
+
+@keyframes portaAbrindo {
+    0% {left: 336px; top: 130px;}
+    100% {left: 0px; top: 130px;}
+}
+
+@keyframes portaFechando {
+    0% {left: 0px; top: 130px;}
+    100% {left: 336px; top: 130px;}
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+</style>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" type="text/css" href="estilo.css" />
+    <script src='main.js'></script>
+</head>
+
+<body class="background">
+    <div>
+        <img class="maquina" src="Assets/Assets/maquina.png" alt="">        
+        <div class="botoesPai">
+            <button class="botao1 botoesFilho" href="#" id="prod1" onclick="comprar(6)">1</button>
+            <button class="botao2 botoesFilho" href="#" id="prod2" onclick="comprar(7)">2</button>
+            <button class="botao3 botoesFilho" href="#" id="prod3" onclick="comprar(8)">3</button>
+        </div>
+
+        <div class="notasPai">
+            <img class="Real   notasFilho" src="Assets/Assets/Real.png" style="width: 35%;margin-left: 14%;" alt=""  onclick="adicionarValor(1)">
+            <img class="2reais notasFilho" src="Assets/Assets/2reais.png"  alt="" onclick="adicionarValor(2)">
+            <img class="5reais notasFilho" src="Assets/Assets/5reais.png"  alt="" onclick="adicionarValor(5)">
+        </div>
+        <h1 class="saldo">0</h1>
+
+        <div class="compraPai">
+            <img class="compraFilho" src="Assets/Assets/snickers.png" id="comp6" alt="">
+            <img class="compraFilho" src="Assets/Assets/milka.png" id="comp7" alt="">
+            <img class="compraFilho" src="Assets/Assets/Redbull.png" id="comp8" alt="">
+        </div>
+
+        <div class="trocoPai">
+            <img style="display: none;" class="trocoFilho" src="Assets/Assets/Troco.png" id="troco" alt="">
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    window.onload = function(){
+        mostrarProdutos();
+    };       
+
+    var saldoAtual = 0;
+
+    function atualizarSaldoNaTela(valor) {
+        document.getElementsByClassName("saldo")[0].innerHTML = valor;
+    };
+
+    function adicionarValor(valor) {
+        var previaSaldoAtual = saldoAtual + valor
+        if (previaSaldoAtual > 10) {
+            alert("Valor máximo inserido.")
+        }else{
+            saldoAtual += valor;
+            atualizarSaldoNaTela(saldoAtual);
+            mostrarProdutos();
+        }
+    };
+
+    function darTroco(valor) {
+        alert("Troco: " + saldoAtual)
+        if(saldoAtual > 0){
+            document.getElementById("troco").style.display="block";
+
+            setTimeout(function(){ 
+                document.getElementById("troco").style.display="none"
+            }, 3000);
+        }
+    };
+
+    function liberarProduto(valor){
+        document.getElementById("comp" + valor).style.display="block";
+
+        setTimeout(function(){ 
+            document.getElementById("comp" + valor).style.display="none"
+         }, 3000);
+    }
+
+    function comprar(valor) {
+            saldoAtual -= valor;
+            darTroco(saldoAtual);
+            saldoAtual = 0;
+            atualizarSaldoNaTela(0);
+            mostrarProdutos();
+            liberarProduto(valor);
+    };
+
+    function mostrarProdutos() {
+        if (saldoAtual >= 8) {
+            document.getElementById("prod1").disabled = false;
+            document.getElementById("prod2").disabled = false;
+            document.getElementById("prod3").disabled = false;
+        } else if (saldoAtual == 7 ) {
+            document.getElementById("prod1").disabled = false;
+            document.getElementById("prod2").disabled = false;
+            document.getElementById("prod3").disabled = true;
+        } else if (saldoAtual == 6 ) {
+            document.getElementById("prod1").disabled = false;
+            document.getElementById("prod2").disabled = true;
+            document.getElementById("prod3").disabled = true;
+        }else{
+            document.getElementById("prod1").disabled = true;
+            document.getElementById("prod2").disabled = true;
+            document.getElementById("prod3").disabled = true;
+        }
+    };
+</script>
