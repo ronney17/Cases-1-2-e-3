@@ -47,15 +47,10 @@ function IrAté(andar) {
 
         }
 
-        AbrirPorta();
-
         console.log("Cheguei!");
 
-        //Recarrega página
-        syncWait(10000)
-        document.location.reload(true);
-
     });
+    AbrirPorta();
 }
 
 function AbrirPorta() {
