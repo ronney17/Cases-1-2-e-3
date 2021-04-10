@@ -34,12 +34,12 @@ function IrAté(andar) {
             syncWait(2000)
             if (sentido == "cima") {
                 andarAtual++;
-                //document.getElementById("painel").innerText = "↑ " + andarAtual;
+                document.getElementById("painel").innerText = "↑ " + andarAtual;
                 console.log("Subindooooo")
             }
             else {
                 andarAtual--;
-                //document.getElementById("painel").innerText = "↓ " + andarAtual;
+                document.getElementById("painel").innerText = "↓ " + andarAtual;
                 console.log("Descendoooo")
             }
 
@@ -47,10 +47,11 @@ function IrAté(andar) {
 
         }
 
+        AbrirPorta();
+
         console.log("Cheguei!");
 
     });
-    AbrirPorta();
 }
 
 function AbrirPorta() {
