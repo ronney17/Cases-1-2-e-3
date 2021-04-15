@@ -49,7 +49,7 @@ function IrAté(andar) {
 
         AbrirPorta();
 
-        console.log("Cheguei!");
+        console.log("Cheguei!" + " atual " + andarAtual + " escolhido " + andarEscolhido);
 
     });
 }
