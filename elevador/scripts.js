@@ -26,12 +26,11 @@ function IrAté(andar) {
 
     // Em loop infinito
     FecharPorta();
-
     const porta = document.getElementById("porta");
-    porta.addEventListener("animationend", () => {
 
+    porta.addEventListener("animationend", () => {
+        syncWait(2500)
         while (andarAtual != andarEscolhido) {
-            syncWait(2000)
             if (sentido == "cima") {
                 andarAtual++;
                 document.getElementById("painel").innerText = "↑ " + andarAtual;
@@ -44,22 +43,22 @@ function IrAté(andar) {
             }
 
             console.log("Andar atual: " + andarAtual)
-
         }
-
         AbrirPorta();
-
-        console.log("Cheguei!");
-
-    });
+        console.log("Cheguei!" + " atual " + andarAtual + " escolhido " + andarEscolhido);
+    })
 }
 
 function AbrirPorta() {
-    document.getElementById("porta").classList.remove("portaFechando")
-    document.getElementById("porta").classList.add("portaAbrindo")
+    document.getElementById("porta").style.display = "none";
+    // document.getElementById("porta").classList.add("portaAbrindo")
+    // document.getElementById("porta").classList.remove("portaFechando")
+    console.log("abrindo")
 }
 
 function FecharPorta() {
-    document.getElementById("porta").classList.remove("portaAbrindo")
+    document.getElementById("porta").style.display = "block";
     document.getElementById("porta").classList.add("portaFechando")
+    document.getElementById("porta").classList.remove("portaAbrindo")
+    console.log("fechando")
 }
