@@ -42,14 +42,26 @@ body{
     100% {left: 336px; top: 130px;}
 }
 
-#painel{
-    vertical-align: 388px;
-    margin-left: 11.3%;
-    margin-top: -8.5px;
+.painel{
+    vertical-align: 2184%;
+    margin-left: 7.1%;
+    margin-top: 0%;
     color: white;
     background-color: black;
     width: 55px;
     text-align: center;
     display: inline-block;
     z-index: 3;
+}
+
+.painel2{
+    vertical-align: 1847.3%;
+    margin-left: 9.12%;
+    margin-top: 0%;
+    color: white;
+    background-color: green;
+    width: 55px;
+    text-align: center;
+    z-index: 3;
+    display: none;
 }
