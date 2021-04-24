@@ -10,11 +10,26 @@
 </head>
 
 <body>
-    <img id="parede" class="parede" src="Assets/parede.png" alt="parede">
-    <img id="porta" class="porta" src="Assets/porta.png" alt="porta">
-    <label id="painel" class="painel">↑↓123</label>
-    <label id="painel2" class="painel2">↑↓123</label>
-    <script defer src="scripts.js"></script>
+    <div class="container">
+        <div>
+            <img id="parede" class="parede" src="Assets/parede.png" alt="parede">
+            <img id="porta" class="porta" src="Assets/porta.png" alt="porta">
+            <label id="painel" class="painel">↑↓123</label>
+            <label id="painel2" class="painel2">↑↓123</label>
+            <script defer src="scripts.js"></script>
+        </div>
+        <div class="item_container_row" style="width: 50%">
+            <div class="item_container_column">
+                <p class="level_title">ANDARES</p>
+                <button class="button" onclick="IrAte(3)">3</button>
+                <button class="button" onclick="IrAte(2)">2</button>
+                <button class="button" onclick="IrAte(1)">1</button>
+                <button class="button" onclick="IrAte(0)">0</button>
+            </div>
+        </div>
+    </div>
 </body>
+
+
 
 </html>

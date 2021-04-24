@@ -43,9 +43,9 @@ body{
 }
 
 .painel{
-    vertical-align: 2184%;
-    margin-left: 7.1%;
-    margin-top: 0%;
+    vertical-align: 2284%;
+    margin-left: 122.2%;
+    margin-top: -114.7%;
     color: white;
     background-color: black;
     width: 55px;
@@ -55,13 +55,45 @@ body{
 }
 
 .painel2{
-    vertical-align: 1847.3%;
-    margin-left: 9.12%;
-    margin-top: 0%;
+    vertical-align: 2284%;
+    margin-left: 137.2%;
+    margin-top: -109.7%;
     color: white;
     background-color: green;
     width: 55px;
     text-align: center;
     z-index: 3;
     display: none;
+}
+
+.button{
+    height: 90px;
+    width: 90px;
+    border-radius: 100%;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    
+}
+
+.item_container_row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.item_container_column{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.level_title{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 25px;
+    color: #4a4a4a;
 }

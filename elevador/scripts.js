@@ -1,4 +1,4 @@
-var andarAtual = prompt("Qual andar você esta? ");
+var andarAtual = 0;
 console.log("Andar inicial: " + andarAtual);
 
 const syncWait = ms => {
@@ -6,7 +6,7 @@ const syncWait = ms => {
     while (Date.now() < end) continue
 }
 
-function IrAté(andar) {
+function IrAte(andar) {
 
     let sentido;
     let andarEscolhido = andar;
@@ -26,7 +26,6 @@ function IrAté(andar) {
     }
     console.log("Sentido: " + sentido)
 
-    // Em loop infinito
     FecharPorta();
 
     const porta = document.getElementById("porta");
@@ -36,7 +35,6 @@ function IrAté(andar) {
             syncWait(2000)
             if (sentido == "cima") {
                 andarAtual++;
-                
                 document.getElementById("painel2").innerText = "↑ " + andarAtual;
                 console.log("Subindooooo")
             }
@@ -55,7 +53,7 @@ function IrAté(andar) {
 
         console.log("Cheguei!" + " atual " + andarAtual + " escolhido " + andarEscolhido);
 
-    });
+    }, {once: true});
 }
 
 function AbrirPorta() {
@@ -67,3 +65,4 @@ function FecharPorta() {
     document.getElementById("porta").classList.remove("portaAbrindo")
     document.getElementById("porta").classList.add("portaFechando")
 }
+
