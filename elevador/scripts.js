@@ -27,35 +27,36 @@ function IrAté(andar) {
     console.log("Sentido: " + sentido)
 
     // Em loop infinito
-    FecharPorta();
 
     const porta = document.getElementById("porta");
     porta.addEventListener("animationend", () => {
-        
-        while (andarAtual != andarEscolhido) {
-            syncWait(2000)
-            if (sentido == "cima") {
-                andarAtual++;
-                
-                document.getElementById("painel2").innerText = "↑ " + andarAtual;
-                console.log("Subindooooo")
-            }
-            else {
-                andarAtual--;
 
-                document.getElementById("painel2").innerText = "↓ " + andarAtual;
-                console.log("Descendoooo")
-            }
+    while (andarAtual != andarEscolhido) {
+        syncWait(2000)
+        if (sentido == "cima") {
+            andarAtual++;
 
-            console.log("Andar atual: " + andarAtual)
+            document.getElementById("painel2").innerText = "↑ " + andarAtual;
+            console.log("Subindooooo")
+        }
+        else {
+            andarAtual--;
 
+            document.getElementById("painel2").innerText = "↓ " + andarAtual;
+            console.log("Descendoooo")
         }
 
-        AbrirPorta();
+        console.log("Andar atual: " + andarAtual)
 
-        console.log("Cheguei!" + " atual " + andarAtual + " escolhido " + andarEscolhido);
+    }   
+    AbrirPorta();
 
-    });
+    }, {once: true});
+
+
+    FecharPorta();
+    console.log("Cheguei!" + " atual " + andarAtual + " escolhido " + andarEscolhido);
+
 }
 
 function AbrirPorta() {
