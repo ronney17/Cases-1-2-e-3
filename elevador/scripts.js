@@ -10,7 +10,6 @@ function IrAte(andar) {
 
     let sentido;
     let andarEscolhido = andar;
-    //console.log("Andar atual: " + andarAtual)
     document.getElementById("painel").style.display = "none";
     document.getElementById("painel2").style.display = "inline-block";
 
@@ -19,14 +18,14 @@ function IrAte(andar) {
         return "ja to nele"
     } else {
         if (andarEscolhido > andarAtual) {
+            document.getElementById("painel2").innerHTML = "↑ ";
             sentido = "cima"
         } else {
+            document.getElementById("painel2").innerHTML = "↓ ";
             sentido = "baixo"
         }
     }
     console.log("Sentido: " + sentido)
-
-    // Em loop infinito
 
     const porta = document.getElementById("porta");
     porta.addEventListener("animationend", () => {
@@ -35,14 +34,14 @@ function IrAte(andar) {
         syncWait(2000)
         if (sentido == "cima") {
             andarAtual++;
-
-            document.getElementById("painel2").innerText = "↑ " + andarAtual;
+            document.getElementById("painel2").innerHTML = andarAtual;
+            document.getElementById("painel2").style.backgroundColor = "black";
             console.log("Subindooooo")
         }
         else {
             andarAtual--;
-
-            document.getElementById("painel2").innerText = "↓ " + andarAtual;
+            document.getElementById("painel2").innerHTML = andarAtual;
+            document.getElementById("painel2").style.backgroundColor = "black";
             console.log("Descendoooo")
         }
 
@@ -56,6 +55,7 @@ function IrAte(andar) {
 
     FecharPorta();
     console.log("Cheguei!" + " atual " + andarAtual + " escolhido " + andarEscolhido);
+    document.getElementById("painel2").style.backgroundColor = "green";
 
 }
 
