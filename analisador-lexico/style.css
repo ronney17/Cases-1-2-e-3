@@ -1,0 +1,93 @@
+body{
+    background-color: teal;
+    max-width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0 10px 0px 10px;  
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    background: linear-gradient(45deg, #49a09d, #5f2c82);
+    background-repeat: no-repeat;
+}
+
+textarea{
+    background-color: rgb(1, 83, 83);
+    color: rgb(255, 255, 255);
+    border: none;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    background-color: rgba(255,255,255,0.2);
+}
+
+table tr {
+    background-color: rgba(255,255,255,0.2);
+}
+
+table tr .colorida{
+    background-color: rgba(255,255,255,0.2);
+}
+
+table{
+    width: 300px;
+}
+
+table tbody{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.topicos{
+    background: #222;
+    text-align: center;
+}
+
+.titulo{
+    font-size: 25px;
+    margin-bottom: 5px;
+} 
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.entrada, .saida-texto{
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs-saida{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.botoes-flex{
+    display: flex;
+    flex-direction: row;
+}
+
+.btn {
+    background: #222;
+    height: 30px;
+    min-width: 100px;
+    border: none;
+    border-radius: 10px;
+    color: #eee;
+    font-size: 20px;
+    position: relative;
+    transition: 1s;
+    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 2px;
+  }
+
+#limpar{
+    margin-left: 10px;
+}
+
+
+
